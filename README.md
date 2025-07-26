@@ -1,3 +1,3 @@
-# Rust-Core-BP
+# rust_core_bp
 
 PRODUCTION READY BACKEND BOILER PLATE
