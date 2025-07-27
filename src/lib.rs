@@ -1,4 +1,4 @@
-use actix_web::{dev::Server, get, post, web, App, HttpResponse, HttpServer, Responder};
+use actix_web::{App, HttpResponse, HttpServer, Responder, dev::Server, get, post, web};
 use serde::{Deserialize, Serialize};
 
 pub fn run() -> Result<Server, std::io::Error> {
@@ -14,12 +14,11 @@ async fn health_check() -> impl Responder {
 }
 
 #[derive(Serialize, Deserialize)]
-struct FormData{
+struct FormData {
     name: String,
-    email: String
+    email: String,
 }
 #[post("/subscriptions")]
 async fn subscriptions(web::Form(form): web::Form<FormData>) -> impl Responder {
     HttpResponse::Ok().finish()
 }
-
