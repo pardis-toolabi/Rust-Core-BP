@@ -19,6 +19,6 @@ struct FormData {
     email: String,
 }
 #[post("/subscriptions")]
-async fn subscriptions(web::Form(form): web::Form<FormData>) -> impl Responder {
+async fn subscriptions(web::Form(_form): web::Form<FormData>) -> impl Responder {
     HttpResponse::Ok().finish()
 }
